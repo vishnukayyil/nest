@@ -24,16 +24,25 @@ const App: React.FC = () => {
       setTasks(res.data);
       console.log("fetchTasks: success, items:", res.data.length);
     } catch (err) {
-  
       console.error("fetchTasks: error", err);
-
     }
   };
 
   return (
     <div style={{ padding: 16 }}>
-      <h1>📝 Task Management App </h1>
+      <h1>📝 Task Management App (safe)</h1>
+
+      {/* Task form */}
       <TaskForm onTaskAdded={fetchTasks} />
+
+      {/* Refresh button (global) */}
+      <div style={{ margin: "12px 0" }}>
+        <button onClick={fetchTasks} aria-label="refresh-tasks">
+          🔄 Refresh
+        </button>
+      </div>
+
+      {/* Task list */}
       <TaskList tasks={tasks} refresh={fetchTasks} />
     </div>
   );
