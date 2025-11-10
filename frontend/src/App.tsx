@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   return (
     <div style={{ padding: 16 }}>
-      <h1>📝 Task Management App (safe)</h1>
+      <h1>📝 Task Management App</h1>
 
       {/* Task form */}
       <TaskForm onTaskAdded={fetchTasks} />
